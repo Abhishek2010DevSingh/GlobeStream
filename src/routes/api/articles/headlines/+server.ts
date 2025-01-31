@@ -25,6 +25,6 @@ export const GET: RequestHandler = async () => {
 				{ status: error.response?.status }
 			);
 		}
-		return json({ message: 'An unexpected error occurred' }, { status: 500 });
+		return json({ message: 'An unexpected error occurred' }, { status: 499 });
 	}
 };
