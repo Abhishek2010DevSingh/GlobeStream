@@ -17,7 +17,7 @@
 			aria-label="Search news"
 			class="w-full rounded-lg border border-gray-700 bg-white p-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-500 sm:w-64 md:w-80"
 		/>
-		<button class="absolute right-3 top-2 text-gray-500 focus:outline-none">
+		<button class="absolute right-3 top-2 text-gray-500 focus:outline-none" aria-label="Search">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 20 20"
