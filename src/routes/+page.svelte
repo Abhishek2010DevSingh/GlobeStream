@@ -2,6 +2,7 @@
 	import NewsCard from '$lib/components/NewsCard.svelte';
 	import { createQuery } from '@tanstack/svelte-query';
 	import { fetchTopHeadlines } from './client';
+	import Loading from '$lib/components/loading.svelte';
 
 	const query = createQuery({
 		queryKey: ['posts'],
@@ -10,7 +11,9 @@
 </script>
 
 {#if $query.isLoading}
-	<p>Loading...</p>
+	<div class="loading-container">
+		<Loading />
+	</div>
 {:else if $query.isError}
 	<p>Error: {$query.error.message}</p>
 {:else}
@@ -20,3 +23,12 @@
 		{/each}
 	</div>
 {/if}
+
+<style>
+	.loading-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+	}
+</style>
