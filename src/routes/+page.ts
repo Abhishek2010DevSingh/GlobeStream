@@ -4,7 +4,7 @@ import { fetchTopHeadlines } from './client';
 export const load: PageLoad = async ({ parent }) => {
 	const { queryClient } = await parent();
 	await queryClient.prefetchQuery({
-		queryKey: ['posts'],
+		queryKey: ['headlines'],
 		queryFn: async () => await fetchTopHeadlines()
 	});
 };

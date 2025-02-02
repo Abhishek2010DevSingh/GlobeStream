@@ -1,3 +1,4 @@
+
 export type Article = {
 	source: { id: string | null; name: string };
 	author: string;

@@ -1,13 +1,17 @@
-<script lang="ts">
-	import NewsCard from '$lib/components/NewsCard.svelte';
+<script>
 	import { createQuery } from '@tanstack/svelte-query';
-	import { fetchTopHeadlines } from './client';
+	import { fetchSearchResult } from '../client';
 	import Loading from '$lib/components/loading.svelte';
+	import NewsCard from '$lib/components/NewsCard.svelte';
 
-	const query = createQuery({
-		queryKey: ['headlines'],
-		queryFn: async () => await fetchTopHeadlines()
-	});
+	let { searchTerm } = $props();
+	const query = $derived(
+		createQuery({
+			queryKey: ['search', $searchTerm],
+			queryFn: async () => await fetchSearchResult($searchTerm),
+			enabled: $searchTerm.length > 0
+		})
+	);
 </script>
 
 {#if $query.isLoading}

@@ -7,12 +7,13 @@ import { API_KEY } from '$env/static/private';
 export const GET: RequestHandler = async ({ url }) => {
 	try {
 		const query = url.searchParams.get('query');
-		if (!query) {
-			return json({ error: 'Missing "query" parameter' }, { status: 400 });
+		const category = url.searchParams.get("category");
+		if (!query || !category) {
+			return json({ error: 'Missing parameter' }, { status: 400 });
 		}
 
 		const response = await axios.get(
-			`https://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`
+			`https://newsapi.org/v2/everything?q=${query}&category=${category}&apiKey=${API_KEY}`
 		);
 		const articles: Article[] = response.data.articles;
 		return json({

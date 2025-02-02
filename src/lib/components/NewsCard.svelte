@@ -46,7 +46,7 @@
 
 		{#if article.content}
 			<p class="mt-3 hidden text-sm text-gray-500 dark:text-gray-400 sm:block">
-				{article.content}
+				{@html article.content}
 			</p>
 		{/if}
 	</div>
