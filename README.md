@@ -1,39 +1,63 @@
-# sv
+# GlobeStream
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+GlobeStream is a Svelte-based application that provides users with the latest news headlines and a search functionality to explore articles on various topics.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Top Headlines:** Stay updated with the most recent news from around the world.
+- **Search:** Find articles by entering keywords or topics of interest.
 
-```bash
-# create a new project in the current directory
-npx sv create
+## Installation
 
-# create a new project in my-app
-npx sv create my-app
-```
+1. **Clone the repository:**
 
-## Developing
+   ```bash
+   git clone https://github.com/Abhishek2010DevSingh/GlobeStream.git
+   cd GlobeStream
+   ```
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Set up the NewsAPI key:**
+
+   - Obtain an API key from [NewsAPI](https://newsapi.org/docs/get-started).
+   - Create a `.env` file in the root directory of the project.
+   - Add your API key to the `.env` file:
+
+     ```
+     API_KEY=your_newsapi_key_here
+     ```
+
+   *Ensure that the `.env` file is included in your `.gitignore` to prevent exposing your API key in version control.*
+
+## Development
+
+To start the development server:
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+This will start the server, and you can access the application in your browser at `http://localhost:5173`.
 
-To create a production version of your app:
+## Building for Production
+
+To create an optimized production build:
 
 ```bash
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+The build artifacts will be stored in the `dist/` directory.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-# GlobeStream
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or suggestions.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
